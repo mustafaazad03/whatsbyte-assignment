@@ -23,7 +23,7 @@ const SkillTestCard: React.FC<SkillTestCardProps> = ({ onUpdate }) => {
 		handleCloseModal();
 	};
 	return (
-		<div className="flex flex-col gap-3 w-fit">
+		<div className="flex flex-col gap-3 w-full">
 			<div className="flex sm:items-center sm:flex-row flex-col sm:gap-2 gap-4 border border-gray-200 rounded-lg p-4 py-6">
 				<div className="flex items-center gap-2 w-full">
 					<Image
