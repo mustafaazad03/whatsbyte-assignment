@@ -2,10 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Modal from "./Modal";
-
-interface SkillTestCardProps {
-	onUpdate: (rank: number, percentile: number, score: number) => void;
-}
+import { SkillTestCardProps } from "@/utils/types";
 
 const SkillTestCard: React.FC<SkillTestCardProps> = ({ onUpdate }) => {
 	const [isModalVisible, setIsModalVisible] = useState(false);

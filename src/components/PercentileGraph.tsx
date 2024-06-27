@@ -10,6 +10,7 @@ import {
 	Legend,
 } from "chart.js";
 import annotationPlugin from "chartjs-plugin-annotation";
+import { PercentileGraphProps } from "@/utils/types";
 
 ChartJS.register(
 	LineElement,
@@ -20,11 +21,6 @@ ChartJS.register(
 	Legend,
 	annotationPlugin
 );
-
-type PercentileGraphProps = {
-	data: { percentile: number; count: number }[];
-	userPercentile: number;
-};
 
 const PercentileGraph: React.FC<PercentileGraphProps> = ({
 	data,

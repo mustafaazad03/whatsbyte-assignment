@@ -1,11 +1,6 @@
+import { QuickStatisticProps } from "@/utils/types";
 import Image from "next/image";
 import React from "react";
-
-interface QuickStatisticProps {
-	rank: number;
-	percentile: number;
-	correctAnswers: number;
-}
 
 const QuickStatistics: React.FC<QuickStatisticProps> = ({
 	rank,

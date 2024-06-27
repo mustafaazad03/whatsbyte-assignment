@@ -8,16 +8,14 @@ import {
 	ArcElement,
 } from "chart.js";
 import Image from "next/image";
+import { QuestionAnalysisProps } from "@/utils/types";
 
 Chart.register(DoughnutController, ArcElement);
 
 const QuestionAnalysis = ({
 	correctAnswers,
 	totalQuestions,
-}: {
-	correctAnswers: number;
-	totalQuestions: number;
-}) => {
+}: QuestionAnalysisProps) => {
 	const chartRef = useRef<HTMLCanvasElement | null>(null);
 	const chartInstance = useRef<Chart<"doughnut", number[], unknown> | null>(
 		null
