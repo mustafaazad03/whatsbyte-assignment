@@ -51,7 +51,7 @@ const PercentileGraph: React.FC<PercentileGraphProps> = ({
 						const nextX = ctx.p1.parsed.x;
 
 						// Remove connection if points are on the same percentile
-						if (currentX === nextX) {
+						if (currentX === nextX && currentX === +userPercentile) {
 							return "rgba(0,0,0,0)";
 						}
 						return "#8884d8";

@@ -1,16 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PercentileGraph from "../components/PercentileGraph";
 import Image from "next/image";
 
-const ComparisonGraph: React.FC = () => {
+interface ComparisonGraphProps {
+	userPercentile: number;
+}
+
+const ComparisonGraph: React.FC<ComparisonGraphProps> = ({
+	userPercentile,
+}) => {
 	const [percentileData, setPercentileData] = useState([
 		{ percentile: 0, count: 1 },
 		{ percentile: 10, count: 2 },
 		{ percentile: 20, count: 3 },
 		{ percentile: 30, count: 7 },
 		{ percentile: 30, count: 4 },
-		{ percentile: 30, count: 10 },
 		{ percentile: 40, count: 10 },
 		{ percentile: 50, count: 20 },
 		{ percentile: 60, count: 15 },
@@ -20,7 +25,12 @@ const ComparisonGraph: React.FC = () => {
 		{ percentile: 100, count: 1 },
 	]);
 
-	const userPercentile = 30;
+	useEffect(() => {
+		setPercentileData([
+			...percentileData,
+			{ percentile: userPercentile, count: 10 },
+		]);
+	}, [userPercentile]);
 
 	return (
 		<div className="p-4 border border-gray-200 rounded-lg">
