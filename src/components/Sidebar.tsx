@@ -28,7 +28,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
 	const path = usePathname();
 	return (
 		<div className="flex h-screen overflow-hidden">
-			<div className="w-1/5 border-r border-gray-200 pt-40 pr-4 gap-4 flex flex-col">
+			<div className="w-1/5 border-r hidden md:flex border-gray-200 pt-40 pr-4 gap-4 flex-col">
 				{dashboardLinks.map((link) => (
 					<Link
 						href={link.url}
@@ -42,13 +42,17 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
 							alt={link.name}
 							width={24}
 							height={24}
-							className="w-6 h-6"
+							className="w-6 h-6 hidden lg:flex"
 						/>
-						<span className="font-bold text-xl text-gray-800">{link.name}</span>
+						<span className="font-bold lg:text-lg xl:text-xl text-gray-800">
+							{link.name}
+						</span>
 					</Link>
 				))}
 			</div>
-			<div className="w-4/5 overflow-y-scroll pt-32 px-12">{children}</div>
+			<div className="lg:w-4/5 w-full overflow-y-scroll pt-32 xl:px-12 px-4">
+				{children}
+			</div>
 		</div>
 	);
 };
