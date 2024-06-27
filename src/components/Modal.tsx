@@ -1,16 +1,7 @@
 "use client";
+import { ModalProps } from "@/utils/types";
 import Image from "next/image";
 import React, { useState } from "react";
-
-interface ModalProps {
-	isVisible: boolean;
-	onClose: () => void;
-	title: string;
-	rankLabel: string;
-	percentileLabel: string;
-	scoreLabel: string;
-	onSave: (rank: number, percentile: number, score: number) => void;
-}
 
 const Modal: React.FC<ModalProps> = ({
 	isVisible,
@@ -38,14 +29,14 @@ const Modal: React.FC<ModalProps> = ({
 			></div>
 			<div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
 				<div className="bg-white p-4 rounded-lg xl:w-[30vw] md:w-[35vw] flex flex-col gap-2">
-					<div className="flex items-center justify-between px-4">
+					<div className="flex items-center justify-between px-4 mb-2">
 						<h3 className="font-extrabold text-lg capitalize">{title}</h3>
 						<Image
 							src={"/html.svg"}
 							alt="image"
 							width={100}
 							height={100}
-							className="w-6 h-6 object-cover"
+							className="w-8 h-8 object-cover"
 						/>
 					</div>
 					<div className="flex items-center justify-between">
