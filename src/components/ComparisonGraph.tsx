@@ -2,10 +2,7 @@
 import React, { useEffect, useState } from "react";
 import PercentileGraph from "../components/PercentileGraph";
 import Image from "next/image";
-
-interface ComparisonGraphProps {
-	userPercentile: number;
-}
+import { ComparisonGraphProps } from "@/utils/types";
 
 const ComparisonGraph: React.FC<ComparisonGraphProps> = ({
 	userPercentile,
@@ -38,7 +35,9 @@ const ComparisonGraph: React.FC<ComparisonGraphProps> = ({
 				<div className="flex flex-col gap-4">
 					<h3 className="capitalize font-extrabold">comparison graph</h3>
 					<p className="text-gray-800">
-						<span className="font-semibold">You scored 30% percentile</span>{" "}
+						<span className="font-semibold">
+							You scored {userPercentile || 30}% percentile
+						</span>{" "}
 						which is lower than the <br /> average percentile 72% of all
 						engineers who took this assignment
 					</p>
